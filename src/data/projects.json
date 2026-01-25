@@ -1,5 +1,72 @@
 [
   {
+    "id": 0,
+    "title": {
+      "en": "DevJournal",
+      "es": "DevJournal"
+    },
+    "slug": "devjournal",
+    "shortDescription": {
+      "en": "Clean and minimal note-taking app with rich text support.",
+      "es": "Aplicación de notas limpia y minimalista con soporte de texto enriquecido."
+    },
+    "longDescription": {
+      "en": "DevJournal is a clean and minimal note-taking web app built to practice TypeScript and SCSS from scratch within a React environment. The goal of the project was to focus on writing more scalable components, improving type safety, and structuring styles in a modular and maintainable way.\n\nThe app allows users to create, edit and organize notes with rich text formatting such as bold text, lists and links, using a WYSIWYG editor for a smooth writing experience. Notes can be categorized to keep information organized, and each note has its own detailed view.\n\nAll data is stored locally using LocalStorage, keeping the app lightweight and fast without relying on a backend. While the project is currently frontend-focused, it is designed with future improvements in mind, such as user authentication, backend persistence and cross-device synchronization.",
+      "es": "DevJournal es una aplicación web de notas limpia y minimalista creada para practicar TypeScript y SCSS desde cero dentro de un entorno React. El objetivo del proyecto fue centrarme en escribir componentes más escalables, mejorar la seguridad de tipos y estructurar los estilos de forma modular y mantenible.\n\nLa aplicación permite crear, editar y organizar notas con formato de texto enriquecido como negritas, listas y enlaces, utilizando un editor WYSIWYG para una experiencia de escritura fluida. Las notas se pueden categorizar para mantener la información ordenada y cada una cuenta con una vista detallada.\n\nTodos los datos se almacenan localmente mediante LocalStorage, lo que hace que la aplicación sea ligera y rápida sin depender de un backend. Aunque actualmente está enfocada en el frontend, el proyecto está pensado para futuras mejoras como autenticación de usuarios, persistencia en backend y sincronización entre dispositivos."
+    },
+    "tags": ["React", "TypeScript", "SCSS", "LocalStorage"],
+    "techHighlights": [
+      {
+        "en": "Built with React and TypeScript",
+        "es": "Desarrollado con React y TypeScript"
+      },
+      {
+        "en": "Rich text editing with React Quill",
+        "es": "Edición de texto enriquecido con React Quill"
+      },
+      {
+        "en": "Modular and scalable SCSS architecture",
+        "es": "Arquitectura SCSS modular y escalable"
+      },
+      {
+        "en": "Client-side persistence using LocalStorage",
+        "es": "Persistencia de datos en el cliente con LocalStorage"
+      },
+      {
+        "en": "Responsive design for desktop and mobile",
+        "es": "Diseño responsive para escritorio y móvil"
+      }
+    ],
+    "links": [
+      {
+        "label": {
+          "en": "GitHub Repository",
+          "es": "Repositorio en GitHub"
+        },
+        "url": "https://github.com/luciaSeo02/devjournal"
+      },
+      {
+        "label": {
+          "en": "Live Demo",
+          "es": "Demo en vivo"
+        },
+        "url": "https://devjournal-pi.vercel.app/"
+      }
+    ],
+    "mainImage": "assets/projects/devjournal01.png",
+    "media": [
+      {
+        "type": "image",
+        "src": "assets/projects/devjournal01.png"
+      },
+      {
+        "type": "image",
+        "src": "assets/projects/devjournal02.png"
+      }
+    ],
+    "category": "Web"
+  },
+  {
     "id": 1,
     "title": {
       "en": "3D Portfolio",

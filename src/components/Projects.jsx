@@ -12,17 +12,21 @@ export default function Projects() {
   };
 
   const rawCategories = ["All", ...new Set(projects.map((p) => p.category))];
-
   const [filter, setFilter] = useState("All");
 
   const filteredProjects =
     filter === "All" ? projects : projects.filter((p) => p.category === filter);
+
+  const sortedProjects = [...filteredProjects].sort(
+    (a, b) => new Date(b.date) - new Date(a.date),
+  );
 
   return (
     <section id="projects" className="max-w-6xl mx-auto p-6">
       <h2 className="text-3xl font-bold text-center mb-8">
         {lang === "en" ? "Projects" : "Proyectos"}
       </h2>
+
       <div className="flex flex-wrap justify-center gap-4 mb-8">
         {rawCategories.map((cat) => {
           const label = cat === "All" ? translations[lang].all : cat;
@@ -44,7 +48,7 @@ export default function Projects() {
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {filteredProjects.map((project) => (
+        {sortedProjects.map((project) => (
           <ProjectCard
             key={project.id}
             title={project.title}

@@ -5,6 +5,7 @@
       "en": "DevJournal",
       "es": "DevJournal"
     },
+    "date": "2025-12-15",
     "slug": "devjournal",
     "shortDescription": {
       "en": "Clean and minimal note-taking app with rich text support.",
@@ -68,6 +69,7 @@
   },
   {
     "id": 1,
+    "date": "2025-10-15",
     "title": {
       "en": "3D Portfolio",
       "es": "Portfolio 3D"
@@ -132,6 +134,7 @@
   },
   {
     "id": 2,
+    "date": "2025-06-15",
     "title": {
       "en": "Hackathons",
       "es": "Hackathones"
@@ -196,6 +199,7 @@
   },
   {
     "id": 3,
+    "date": "2025-04-15",
     "title": {
       "en": "Emojis Game",
       "es": "Parejas de emojis"
@@ -271,6 +275,7 @@
   },
   {
     "id": 4,
+    "date": "2025-03-15",
     "title": {
       "en": "ShinChan on 3D",
       "es": "ShinChan en 3D"
@@ -331,6 +336,7 @@
   },
   {
     "id": 5,
+    "date": "2025-02-15",
     "title": {
       "en": "Bathroom set",
       "es": "Set de baño"
@@ -381,6 +387,7 @@
   },
   {
     "id": 6,
+    "date": "2025-01-15",
     "title": {
       "en": "Bedroom set",
       "es": "Set de dormitorio"
@@ -437,6 +444,7 @@
   },
   {
     "id": 7,
+    "date": "2024-12-15",
     "title": {
       "en": "Supermarket Simulator",
       "es": "Supermarket Simulator"
@@ -485,6 +493,7 @@
   },
   {
     "id": 8,
+    "date": "2024-11-15",
     "title": {
       "en": "Larapetas",
       "es": "TFG Larapetas"
@@ -538,6 +547,7 @@
   },
   {
     "id": 9,
+    "date": "2024-10-15",
     "title": {
       "en": "Chinese New Year",
       "es": "Año nuevo chino"
@@ -584,6 +594,7 @@
   },
   {
     "id": 10,
+    "date": "2024-12-25",
     "title": {
       "en": "Christmas shorts",
       "es": "Cortos de Navidad"
@@ -644,6 +655,7 @@
   },
   {
     "id": 11,
+    "date": "2024-10-25",
     "title": {
       "en": "Halloween shop",
       "es": "Tiendo da Halloween"
@@ -692,6 +704,7 @@
   },
   {
     "id": 12,
+    "date": "2025-02-14",
     "title": {
       "en": "Valentine's day",
       "es": "San Valentín"
@@ -735,6 +748,246 @@
       { "type": "image", "src": "assets/projects/valentinesImg04.png" }
     ],
     "tags": ["Blender", "Davinci Resolve", "Adobe Photoshop"],
+    "category": "3D"
+  },
+  {
+    "id": 13,
+    "date": "2026-03-02",
+    "title": {
+      "en": "Handcrafted Guitars & Metal Art",
+      "es": "Guitarras Artesanales y Arte en Metal"
+    },
+    "slug": "handcrafted-guitars",
+    "shortDescription": {
+      "en": "Bilingual website for a local artisan specializing in handcrafted guitars and metal artwork.",
+      "es": "Portfolio bilingüe para un artesano local especializado en guitarras y arte en metal."
+    },
+    "longDescription": {
+      "en": "This project is a bilingual portfolio website developed for a local artisan business specializing in handcrafted guitars, restorations, and metal artwork. The platform provides a premium digital presence focused on craftsmanship, minimal design, and custom order management.\n\nThe architecture prioritizes scalability, maintainability, and clean component structure. Visitors can browse service presentations, featured work showcases, and submit custom order requests. The UI is fully responsive, performance-oriented, and includes internationalization support (English / Spanish) with persistent language selection.",
+      "es": "Este proyecto es un portfolio bilingüe desarrollado para un negocio artesanal local especializado en guitarras hechas a mano, restauraciones y arte en metal. La plataforma ofrece una presencia digital premium, centrada en la artesanía, un diseño minimalista y la gestión de pedidos personalizados.\n\nLa arquitectura prioriza la escalabilidad, mantenibilidad y una estructura de componentes limpia. Los visitantes pueden explorar los servicios, ver trabajos destacados y enviar solicitudes de pedidos personalizados. La interfaz es totalmente responsive, optimizada para rendimiento, e incluye soporte de internacionalización (inglés/español) con selección de idioma persistente."
+    },
+    "tags": ["React", "TypeScript", "TailwindCSS", "Vercel"],
+    "techHighlights": [
+      {
+        "en": "Bilingual site with internationalization (English/Spanish)",
+        "es": "Sitio bilingüe con internacionalización (inglés/español)"
+      },
+      {
+        "en": "Dynamic routing with state-based service selection",
+        "es": "Rutas dinámicas con selección de servicios basada en estado"
+      },
+      {
+        "en": "Custom order form with API integration",
+        "es": "Formulario de pedidos personalizados con integración de API"
+      },
+      {
+        "en": "Modular component-driven architecture",
+        "es": "Arquitectura modular basada en componentes"
+      },
+      {
+        "en": "Responsive and performance-oriented design",
+        "es": "Diseño responsive y orientado al rendimiento"
+      }
+    ],
+    "links": [
+      {
+        "label": {
+          "en": "GitHub Repository",
+          "es": "Repositorio en GitHub"
+        },
+        "url": "https://github.com/luciaSeo02/guitarShowcaseWeb"
+      },
+      {
+        "label": {
+          "en": "Live Demo",
+          "es": "Demo en vivo"
+        },
+        "url": "https://guitarstudio.vercel.app/"
+      }
+    ],
+    "mainImage": "assets/projects/guitars01.png",
+    "media": [
+      {
+        "type": "image",
+        "src": "assets/projects/guitars01.png"
+      },
+      {
+        "type": "image",
+        "src": "assets/projects/guitars02.png"
+      }
+    ],
+    "category": "Web"
+  },
+  {
+    "id": "14",
+    "date": "2026-03-02",
+    "title": {
+      "en": "Fiverr 3D Commissions",
+      "es": "Comisiones 3D en Fiverr"
+    },
+    "slug": "fiverr-3d",
+    "shortDescription": {
+      "en": "Collection of small freelance 3D modeling projects with 5-star client reviews.",
+      "es": "Colección de pequeños proyectos 3D freelance con reseñas de 5 estrellas de clientes."
+    },
+    "longDescription": {
+      "en": "Collection of 3D modeling commissions completed for international clients through Fiverr. All projects were delivered on time with 5-star reviews.",
+      "es": "Colección de encargos de modelado 3D realizados para clientes internacionales a través de Fiverr. Todos los proyectos fueron entregados a tiempo con valoraciones de 5 estrellas."
+    },
+    "tags": ["3D Modeling", "Blender", "Fiverr", "Client Work"],
+    "techHighlights": [
+      {
+        "en": "Small freelance projects demonstrating 3D modeling, texturing, and rendering",
+        "es": "Pequeños proyectos freelance demostrando modelado 3D, texturizado y renderizado"
+      },
+      {
+        "en": "High-quality deliverables and fast turnaround",
+        "es": "Entregas de alta calidad y rápida ejecución"
+      },
+      {
+        "en": "5-star client reviews showcasing satisfaction",
+        "es": "Reseñas de clientes de 5 estrellas demostrando satisfacción"
+      }
+    ],
+    "links": [
+      {
+        "label": {
+          "en": "Fiverr Profile",
+          "es": "Perfil en Fiverr"
+        },
+        "url": "https://www.fiverr.com/loozziasart"
+      }
+    ],
+    "mainImage": "assets/projects/fiverr-cake.png",
+    "media": [
+      {
+        "type": "section",
+        "title": {
+          "en": "Detailed 3D Cake Model",
+          "es": "Modelo 3D Detallado de Tarta"
+        },
+        "price": "US$20",
+        "duration": "1 day",
+        "services": [
+          "3D Modeling",
+          "Texturing",
+          "Lighting",
+          "2 Renders",
+          "Source File"
+        ]
+      },
+      {
+        "type": "image",
+        "src": "assets/projects/fiverr-cake.png"
+      },
+      {
+        "type": "testimonial",
+        "rating": 5,
+        "author": "kelimagnus303",
+        "country": "United Kingdom",
+        "text": {
+          "en": "Very impressive quality and speed, would recommend and use again. Thank you.",
+          "es": "Calidad y rapidez impresionante, lo recomendaría y volvería a contratar sin duda."
+        }
+      },
+
+      {
+        "type": "section",
+        "title": {
+          "en": "Two Low Poly Models",
+          "es": "Dos Modelos Low Poly"
+        },
+        "price": "US$15",
+        "duration": "1 day",
+        "services": ["3D Modeling", "Low Poly Optimization", "Source File"]
+      },
+      {
+        "type": "image",
+        "src": "assets/projects/fiverr-lowpoly01.png"
+      },
+      {
+        "type": "image",
+        "src": "assets/projects/fiverr-lowpoly02.png"
+      },
+      {
+        "type": "testimonial",
+        "rating": 5,
+        "author": "mamun_5423",
+        "country": "Bangladesh",
+        "text": {
+          "en": "Great person to work with.",
+          "es": "Una persona excelente con la que trabajar."
+        }
+      },
+
+      {
+        "type": "section",
+        "title": {
+          "en": "3 Cookie Models for 3D Printing",
+          "es": "3 Modelos de Galletas para Impresión 3D"
+        },
+        "price": "US$60",
+        "duration": "14 days",
+        "services": [
+          "3D Modeling",
+          "STL Export",
+          "3D Print Optimization",
+          "Source File"
+        ]
+      },
+      {
+        "type": "image",
+        "src": "assets/projects/fiverr-cookies01.png"
+      },
+      {
+        "type": "image",
+        "src": "assets/projects/fiverr-cookies02.png"
+      },
+      {
+        "type": "image",
+        "src": "assets/projects/fiverr-cookies03.png"
+      },
+      {
+        "type": "testimonial",
+        "rating": 5,
+        "author": "cbrink2016",
+        "country": "United States",
+        "text": {
+          "en": "Lucia was incredibly understanding & helpful with my first 3D model commission. Delivered in a timely fashion. I'll definitely return again!",
+          "es": "Lucía fue increíblemente comprensiva y útil en mi primer encargo 3D. Entregó todo rápidamente. ¡Volveré a trabajar con ella!"
+        }
+      },
+
+      {
+        "type": "section",
+        "title": {
+          "en": "Spaghetti Model Rebuild for 3D Printing",
+          "es": "Reconstrucción de Modelo de Espagueti para Impresión 3D"
+        },
+        "price": "US$40",
+        "duration": "3 days",
+        "services": [
+          "3D Modeling",
+          "Mesh Cleanup",
+          "Print Optimization",
+          "STL File"
+        ]
+      },
+      {
+        "type": "image",
+        "src": "assets/projects/fiverr-spaghetti.png"
+      },
+      {
+        "type": "testimonial",
+        "rating": 5,
+        "author": "jaccs1028",
+        "country": "Canada",
+        "text": {
+          "en": "Great working with Lucia! Very smooth communication and she understood the requirements. Work was delivered timely and accurately.",
+          "es": "¡Fue un placer trabajar con Lucía! La comunicación fue muy fluida y comprendió los requisitos. El trabajo se entregó puntual y con precisión."
+        }
+      }
+    ],
     "category": "3D"
   }
 ]

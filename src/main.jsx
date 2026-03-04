@@ -6,8 +6,8 @@ import "./style.css";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <BrowserRouter basename="/room-portfolio/">
+    <BrowserRouter basename="/">
       <App />
     </BrowserRouter>
-  </StrictMode>
+  </StrictMode>,
 );

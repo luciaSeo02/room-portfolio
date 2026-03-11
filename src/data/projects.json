@@ -190,8 +190,8 @@
     "media": [
       {
         "type": "video",
-        "src": "/assets/projects/hackathonWalkthrough.mp4",
-        "poster": "/assets/projects/hackathonPoster.png"
+        "src": "assets/projects/hackathonWalkthrough.mp4",
+        "poster": "assets/projects/hackathonPoster.png"
       }
     ],
     "tags": ["React", "SQL", "Nodejs", "Tailwind", "JavaScript"],
@@ -266,8 +266,8 @@
     "media": [
       {
         "type": "video",
-        "src": "/assets/projects/emojiWalkthrough.mp4",
-        "poster": "/assets/projects/parejasEmoji01.png"
+        "src": "assets/projects/emojiWalkthrough.mp4",
+        "poster": "assets/projects/parejasEmoji01.png"
       }
     ],
     "tags": ["JavaScript", "HTML", "CSS"],

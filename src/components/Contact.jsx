@@ -8,6 +8,7 @@ import {
   XCircle,
 } from "lucide-react";
 import { useLang } from "../context/LangContext";
+import { motion } from "framer-motion";
 
 export default function Contact() {
   const [toast, setToast] = useState(null);
@@ -64,14 +65,27 @@ export default function Contact() {
     setTimeout(() => setToast(null), 4000);
   };
 
+  const containerVariants = {
+    hidden: {},
+    show: { transition: { staggerChildren: 0.12 } },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 30 },
+    show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
+  };
+
   return (
     <section
       id="contact"
-      className="min-h-screen flex items-center justify-center bg-gray-100 relative mb-0"
+      className="min-h-screen bg-gray-100 relative flex items-center justify-center px-6 py-16"
     >
       {toast && (
-        <div
-          className={`fixed mt-10 top-6 right-6 flex items-center gap-3 px-4 py-3 rounded-lg shadow-lg text-white transition-all duration-500 ${
+        <motion.div
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -20 }}
+          className={`fixed top-6 right-6 flex items-center gap-3 px-4 py-3 rounded-lg shadow-lg text-white ${
             toast.type === "success" ? "bg-green-600" : "bg-red-600"
           }`}
         >
@@ -81,20 +95,27 @@ export default function Contact() {
             <XCircle className="w-5 h-5" />
           )}
           <span>{toast.message}</span>
-        </div>
+        </motion.div>
       )}
 
-      <div className="max-w-5xl text-center px-6 py-12">
-        <div className="text-center mb-12">
+      <motion.div
+        className="max-w-5xl w-full"
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true, margin: "-100px" }}
+      >
+        <motion.div variants={itemVariants} className="text-center mb-12">
           <h3 className="text-3xl font-bold mb-4">{t.title}</h3>
           <p className="text-lg text-gray-700 max-w-2xl mx-auto">
             {t.description}
           </p>
-        </div>
+        </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
-          <form
+          <motion.form
             onSubmit={handleSubmit}
+            variants={itemVariants}
             className="bg-white p-6 rounded-xl shadow-md space-y-4"
           >
             <input
@@ -102,13 +123,15 @@ export default function Contact() {
               name="name"
               placeholder={t.placeholders.name}
               required
-              className="w-full p-3 border rounded-lg focus:outline-none focus:ring-blue-500"
+              variants={itemVariants}
+              className="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
             <input
               type="email"
               name="email"
               placeholder={t.placeholders.email}
               required
+              variants={itemVariants}
               className="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
             <textarea
@@ -116,51 +139,70 @@ export default function Contact() {
               placeholder={t.placeholders.message}
               rows="5"
               required
+              variants={itemVariants}
               className="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-            ></textarea>
+            />
             <button
               type="submit"
+              variants={itemVariants}
               className="px-6 py-3 bg-blue-600 text-white rounded-lg shadow hover:bg-blue-700 transition"
             >
               {t.button}
             </button>
-          </form>
+          </motion.form>
 
-          <div className="flex flex-col justify-center gap-4">
-            <a
-              href={`mailto:luciaseo20@gmail.com`}
-              className="flex items-center gap-3 p-4 bg-white rounded-xl shadow hover:shadow-md transition"
-            >
-              <Mail className="text-blue-600" />
-              <span>luciaseo20@gmail.com</span>
-            </a>
-            <a
-              href="https://www.linkedin.com/in/lucia-seo"
-              target="_blank"
-              className="flex items-center gap-3 p-4 bg-white rounded-xl shadow hover:shadow-md transition"
-            >
-              <Linkedin className="text-blue-600" />
-              <span>lucia-seo</span>
-            </a>
-            <a
-              href="https://www.instagram.com/loozziasart/"
-              target="_blank"
-              className="flex items-center gap-3 p-4 bg-white rounded-xl shadow hover:shadow-md transition"
-            >
-              <Instagram className="text-pink-500" />
-              <span>loozziasart</span>
-            </a>
-            <a
-              href="https://tiktok.com/@loozziasart/"
-              target="_blank"
-              className="flex items-center gap-3 p-4 bg-white rounded-xl shadow hover:shadow-md transition"
-            >
-              <Music className="text-black" />
-              <span>loozziasart</span>
-            </a>
-          </div>
+          <motion.div
+            variants={itemVariants}
+            className="flex flex-col justify-center gap-4"
+          >
+            {[
+              {
+                icon: Mail,
+                label: "luciaseo20@gmail.com",
+                href: "mailto:luciaseo20@gmail.com",
+                color: "text-blue-600",
+              },
+              {
+                icon: Linkedin,
+                label: "lucia-seo",
+                href: "https://www.linkedin.com/in/lucia-seo",
+                color: "text-blue-600",
+              },
+              {
+                icon: Instagram,
+                label: "loozziasart",
+                href: "https://www.instagram.com/loozziasart/",
+                color: "text-pink-500",
+              },
+              {
+                icon: Music,
+                label: "loozziasart",
+                href: "https://tiktok.com/@loozziasart/",
+                color: "text-black",
+              },
+            ].map((contact, i) => {
+              const Icon = contact.icon;
+              return (
+                <motion.a
+                  key={i}
+                  href={contact.href}
+                  target="_blank"
+                  variants={itemVariants}
+                  whileHover={{
+                    scale: 1.03,
+                    y: -2,
+                    boxShadow: "0 8px 15px rgba(0,0,0,0.1)",
+                  }}
+                  className="flex items-center gap-3 p-4 bg-white rounded-xl shadow transition"
+                >
+                  <Icon className={contact.color} />
+                  <span>{contact.label}</span>
+                </motion.a>
+              );
+            })}
+          </motion.div>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 }

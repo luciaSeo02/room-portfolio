@@ -2,6 +2,7 @@ import { useState } from "react";
 import ProjectCard from "./ProjectCard.jsx";
 import projects from "../data/projects.json";
 import { useLang } from "../context/LangContext";
+import { AnimatePresence, motion } from "framer-motion";
 
 export default function Projects() {
   const { lang } = useLang();
@@ -11,7 +12,7 @@ export default function Projects() {
     es: { all: "Todos" },
   };
 
-  const rawCategories = ["All", ...new Set(projects.map((p) => p.category))];
+  const categories = ["All", ...new Set(projects.map((p) => p.category))];
   const [filter, setFilter] = useState("All");
 
   const filteredProjects =
@@ -23,14 +24,25 @@ export default function Projects() {
 
   return (
     <section id="projects" className="max-w-6xl mx-auto p-6">
-      <h2 className="text-3xl font-bold text-center mb-8">
+      <motion.h2
+        className="text-3xl font-bold text-center mb-8"
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+        viewport={{ once: true, margin: "-100px" }}
+      >
         {lang === "en" ? "Projects" : "Proyectos"}
-      </h2>
+      </motion.h2>
 
-      <div className="flex flex-wrap justify-center gap-4 mb-8">
-        {rawCategories.map((cat) => {
+      <motion.div
+        className="flex flex-wrap justify-center gap-4 mb-8"
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
+        viewport={{ once: true, margin: "-100px" }}
+      >
+        {categories.map((cat) => {
           const label = cat === "All" ? translations[lang].all : cat;
-
           return (
             <button
               key={cat}
@@ -45,20 +57,30 @@ export default function Projects() {
             </button>
           );
         })}
-      </div>
+      </motion.div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {sortedProjects.map((project) => (
-          <ProjectCard
-            key={project.id}
-            title={project.title}
-            shortDescription={project.shortDescription}
-            mainImage={project.mainImage}
-            tags={project.tags}
-            lang={lang}
-            slug={project.slug}
-          />
-        ))}
+        <AnimatePresence>
+          {sortedProjects.map((project) => (
+            <motion.div
+              key={project.id}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.5, ease: "easeOut" }}
+              viewport={{ once: true, margin: "-100px" }}
+            >
+              <ProjectCard
+                title={project.title}
+                shortDescription={project.shortDescription}
+                mainImage={project.mainImage}
+                tags={project.tags}
+                lang={lang}
+                slug={project.slug}
+              />
+            </motion.div>
+          ))}
+        </AnimatePresence>
       </div>
     </section>
   );

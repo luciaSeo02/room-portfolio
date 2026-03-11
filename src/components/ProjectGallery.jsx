@@ -3,9 +3,20 @@ import Lightbox from "yet-another-react-lightbox";
 import Video from "yet-another-react-lightbox/plugins/video";
 import "yet-another-react-lightbox/styles.css";
 import { Play, Star } from "lucide-react";
+import { motion } from "framer-motion";
 import { useLang } from "../context/LangContext";
 
 const getMediaSrc = (src) => `${import.meta.env.BASE_URL}${src}`;
+
+const containerVariants = {
+  hidden: {},
+  show: { transition: { staggerChildren: 0.1 } },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 20 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+};
 
 export default function ProjectGallery({ media = [], title }) {
   const [open, setOpen] = useState(false);
@@ -39,30 +50,38 @@ export default function ProjectGallery({ media = [], title }) {
 
   return (
     <>
-      <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 mb-8">
+      <motion.div
+        className="grid grid-cols-2 sm:grid-cols-3 gap-4 mb-8"
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true, margin: "-100px" }}
+      >
         {media.map((item, i) => {
           if (item.type === "section") {
             return (
-              <div
+              <motion.div
                 key={i}
+                variants={itemVariants}
                 className="col-span-2 sm:col-span-3 mt-10 p-6 bg-gray-50 rounded-xl border border-gray-200"
               >
                 <h3 className="text-xl font-semibold mb-2">
                   {item.title?.[lang]}
                 </h3>
-
                 <ul className="text-sm text-gray-600 list-disc list-inside space-y-1">
                   {item.services?.map((service, idx) => (
                     <li key={idx}>{service}</li>
                   ))}
                 </ul>
-              </div>
+              </motion.div>
             );
           }
+
           if (item.type === "testimonial") {
             return (
-              <div
+              <motion.div
                 key={i}
+                variants={itemVariants}
                 className="col-span-2 sm:col-span-3 bg-white p-6 rounded-xl shadow-md border border-gray-200"
               >
                 <div className="flex items-center justify-between mb-3">
@@ -80,24 +99,26 @@ export default function ProjectGallery({ media = [], title }) {
                     {item.author} · {item.country}
                   </span>
                 </div>
-
                 <p className="text-gray-700 italic leading-relaxed">
                   {item.text?.[lang]}
                 </p>
-              </div>
+              </motion.div>
             );
           }
 
           const lightboxIndex = mediaForLightbox.findIndex((m) => m === item);
 
           return (
-            <div
+            <motion.div
               key={i}
+              variants={itemVariants}
               className="relative cursor-pointer rounded-lg shadow overflow-hidden aspect-square bg-gray-200 group"
               onClick={() => {
                 setOpen(true);
                 setIndex(lightboxIndex);
               }}
+              whileHover={{ scale: 1.05 }}
+              transition={{ type: "spring", stiffness: 200 }}
             >
               {item.type === "image" ? (
                 <img
@@ -119,10 +140,10 @@ export default function ProjectGallery({ media = [], title }) {
                   </div>
                 </>
               )}
-            </div>
+            </motion.div>
           );
         })}
-      </div>
+      </motion.div>
 
       <Lightbox
         open={open}

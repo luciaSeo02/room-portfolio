@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { useLang } from "../context/LangContext";
+
 export default function ProjectCard({
   slug,
   title,
@@ -10,7 +11,7 @@ export default function ProjectCard({
   const { lang } = useLang();
   return (
     <Link to={`/projects/${slug}`}>
-      <div className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition">
+      <div className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl hover:scale-105 transition-transform duration-300">
         <img
           src={mainImage}
           alt={title[lang]}
@@ -23,7 +24,7 @@ export default function ProjectCard({
             {tags?.map((tag, idx) => (
               <span
                 key={idx}
-                className="bg-blue-100 text-blue-600 text-xs font-medium px-2 py-1 rounded-full"
+                className="bg-blue-100 text-blue-600 text-xs font-medium px-2 py-1 rounded-full transition hover:bg-blue-200"
               >
                 {tag}
               </span>

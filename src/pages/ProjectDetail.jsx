@@ -1,39 +1,57 @@
+import { useState } from "react";
 import { useParams } from "react-router-dom";
+import { motion } from "framer-motion";
 import projects from "../data/projects.json";
 import ProjectGallery from "../components/ProjectGallery";
-import { Link } from "lucide-react";
+import { Link as LinkIcon } from "lucide-react";
 import SocialLinks from "../components/SocialLinks";
 import ScrollToTop from "../components/ScrollToTop.jsx";
 import { useLang } from "../context/LangContext";
+
+const containerVariants = {
+  hidden: {},
+  show: { transition: { staggerChildren: 0.2 } },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 30 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+};
 
 export default function ProjectDetail() {
   const { slug } = useParams();
   const project = projects.find((p) => p.slug === slug);
   const { lang } = useLang();
 
-  if (!project) {
-    return <p className="text-center mt-10">Project not found</p>;
-  }
+  if (!project) return <p className="text-center mt-10">Project not found</p>;
 
   return (
     <>
       <ScrollToTop />
-      <section className="max-w-5xl mx-auto px-6 py-12">
-        <h2 className="text-3xl font-bold mb-4">{project.title[lang]}</h2>
-        {Array.isArray(project.longDescription[lang]) ? (
-          project.longDescription[lang].map((para, idx) => (
-            <p key={idx} className="text-gray-600 mb-6">
-              {para}
+      <motion.section
+        className="max-w-5xl mx-auto px-6 py-12"
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true, margin: "-100px" }}
+      >
+        <motion.div variants={itemVariants} className="mb-8">
+          <h2 className="text-3xl font-bold mb-4">{project.title[lang]}</h2>
+          {Array.isArray(project.longDescription[lang]) ? (
+            project.longDescription[lang].map((para, idx) => (
+              <p key={idx} className="text-gray-600 mb-4">
+                {para}
+              </p>
+            ))
+          ) : (
+            <p className="text-gray-600 mb-8 whitespace-pre-line">
+              {project.longDescription[lang]}
             </p>
-          ))
-        ) : (
-          <p className="text-gray-600 mb-8 whitespace-pre-line">
-            {project.longDescription[lang]}
-          </p>
-        )}
+          )}
+        </motion.div>
 
         {project.techHighlights?.length > 0 && (
-          <div className="mb-8">
+          <motion.div variants={itemVariants} className="mb-8">
             <h3 className="text-2xl font-semibold mb-4">
               {lang === "en"
                 ? "Key Contributions & Highlights"
@@ -41,52 +59,65 @@ export default function ProjectDetail() {
             </h3>
             <ul className="list-disc list-inside space-y-2 text-gray-700">
               {project.techHighlights.map((highlight, idx) => (
-                <li key={idx}>{highlight[lang]}</li>
+                <motion.li key={idx} variants={itemVariants}>
+                  {highlight[lang]}
+                </motion.li>
               ))}
             </ul>
-          </div>
+          </motion.div>
         )}
 
         {project.media?.length > 0 && (
-          <ProjectGallery media={project.media} title={project.title[lang]} />
+          <motion.div variants={itemVariants}>
+            <ProjectGallery media={project.media} title={project.title[lang]} />
+          </motion.div>
         )}
 
         {project.links?.length > 0 && (
-          <div className="mb-8">
+          <motion.div variants={itemVariants} className="mb-8">
             <h3 className="text-2xl font-semibold mb-4">
               {lang === "en" ? "Explore More" : "Explora más"}
             </h3>
             <div className="flex flex-col gap-3">
               {project.links.map((link, idx) => (
-                <a
+                <motion.a
                   key={idx}
                   href={link.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-blue-600 hover:underline flex items-center gap-2"
+                  whileHover={{ scale: 1.03, color: "#2563EB" }}
+                  className="flex items-center gap-2 text-gray-700 hover:text-blue-600 transition"
                 >
-                  <Link /> {link.label[lang]}
-                </a>
+                  <LinkIcon size={18} /> {link.label[lang]}
+                </motion.a>
               ))}
             </div>
-          </div>
+          </motion.div>
         )}
 
         {project.category === "3D" && <SocialLinks lang={lang} />}
 
         {project.tags?.length > 0 && (
-          <div className="flex flex-wrap gap-2 mt-4">
+          <motion.div
+            variants={itemVariants}
+            className="flex flex-wrap gap-2 mt-6"
+          >
             {project.tags.map((tag, idx) => (
-              <span
+              <motion.span
                 key={idx}
-                className="bg-blue-100 text-blue-600 text-xs font-medium px-3 py-1 rounded-full"
+                whileHover={{
+                  scale: 1.12,
+                  backgroundColor: "#93C5FD",
+                  color: "#1E3A8A",
+                }}
+                className="px-3 py-1 rounded-full bg-gradient-to-r from-blue-100 to-blue-200 text-blue-600 text-xs font-medium cursor-pointer"
               >
                 {tag}
-              </span>
+              </motion.span>
             ))}
-          </div>
+          </motion.div>
         )}
-      </section>
+      </motion.section>
     </>
   );
 }

@@ -989,5 +989,100 @@
       }
     ],
     "category": "3D"
+  },
+  {
+    "id": 15,
+    "date": "2026-05-05",
+    "title": {
+      "en": "mytrckr - Career Growth Platform",
+      "es": "mytrckr - Plataforma de Crecimiento Profesional"
+    },
+    "slug": "mytrckr",
+    "shortDescription": {
+      "en": "Full-stack web app that helps tech candidates track applications, analyze skill gaps, and get personalized recommendations using real job market data.",
+      "es": "Aplicación web full-stack que ayuda a candidatos tech a trackear aplicaciones, analizar brechas de habilidades y obtener recomendaciones personalizadas con datos reales del mercado laboral."
+    },
+    "longDescription": {
+      "en": "mytrckr is a full-stack career intelligence platform built for tech professionals. It combines job application tracking with real market data analysis to give candidates a competitive edge in their job search.\n\nUsers can build a professional profile with their skills and target role, track every job application with detailed metadata (status, salary, company type, work mode), and visualize their pipeline through interactive dashboard analytics.\n\nThe platform integrates with the Adzuna API to pull real job listings from across Europe, analyzing skill demand by region, role distribution, work mode trends, and salary ranges, updated weekly via automated cron jobs.\n\nA personalized recommendation engine compares each user's profile against actual market demand, identifying skill gaps and suggesting prioritized learning paths with curated resources. Users can track their learning progress and add completed skills directly to their profile.\n\nThe app features complete authentication with JWT httpOnly cookies, email verification, and password reset via transactional emails through Brevo. Deployed in production with Vercel, Render, and Supabase.",
+      "es": "mytrckr es una plataforma full-stack de inteligencia profesional diseñada para profesionales tech. Combina el seguimiento de aplicaciones laborales con análisis de datos reales del mercado para dar a los candidatos una ventaja competitiva.\n\nLos usuarios pueden crear un perfil profesional con sus habilidades y rol objetivo, trackear cada aplicación con metadatos detallados (estado, salario, tipo de empresa, modalidad de trabajo) y visualizar su pipeline a través de analíticas interactivas en el dashboard.\n\nLa plataforma se integra con la API de Adzuna para obtener ofertas reales de empleo en Europa, analizando la demanda de habilidades por región, distribución de roles, tendencias de modalidad de trabajo y rangos salariales, actualizado semanalmente mediante cron jobs automatizados.\n\nUn motor de recomendaciones personalizado compara el perfil de cada usuario contra la demanda real del mercado, identificando brechas de habilidades y sugiriendo rutas de aprendizaje priorizadas con recursos seleccionados. Los usuarios pueden trackear su progreso y añadir habilidades completadas directamente a su perfil.\n\nLa app incluye autenticación completa con JWT httpOnly cookies, verificación de email y reseteo de contraseña mediante emails transaccionales a través de Brevo. Desplegada en producción con Vercel, Render y Supabase."
+    },
+    "tags": [
+      "Next.js",
+      "NestJS",
+      "TypeScript",
+      "PostgreSQL",
+      "Prisma",
+      "Tailwind CSS",
+      "Recharts",
+      "Supabase",
+      "Vercel",
+      "Render"
+    ],
+    "techHighlights": [
+      {
+        "en": "Full-stack app with Next.js 16 frontend and NestJS backend",
+        "es": "Aplicación full-stack con frontend en Next.js 16 y backend en NestJS"
+      },
+      {
+        "en": "Real job market data integration via Adzuna API with weekly automated syncs",
+        "es": "Integración de datos reales del mercado laboral mediante API de Adzuna con sincronización semanal automatizada"
+      },
+      {
+        "en": "Personalized skill gap analysis and learning recommendations based on market demand",
+        "es": "Análisis personalizado de brechas de habilidades y recomendaciones de aprendizaje basadas en demanda del mercado"
+      },
+      {
+        "en": "JWT authentication with httpOnly cookies, email verification and password reset",
+        "es": "Autenticación JWT con cookies httpOnly, verificación de email y reseteo de contraseña"
+      },
+      {
+        "en": "Interactive dashboard analytics with Recharts data visualizations",
+        "es": "Analíticas interactivas en dashboard con visualizaciones de datos con Recharts"
+      },
+      {
+        "en": "Production deployment with Vercel, Render and Supabase",
+        "es": "Despliegue en producción con Vercel, Render y Supabase"
+      }
+    ],
+    "links": [
+      {
+        "label": {
+          "en": "GitHub Repository",
+          "es": "Repositorio en GitHub"
+        },
+        "url": "https://github.com/luciaSeo02/tech-career-growth-platform"
+      },
+      {
+        "label": {
+          "en": "Live Demo",
+          "es": "Demo en vivo"
+        },
+        "url": "https://mytrckr.vercel.app"
+      }
+    ],
+    "mainImage": "assets/projects/mytrckr01.png",
+    "media": [
+      {
+        "type": "image",
+        "src": "assets/projects/mytrckr01.png"
+      },
+      {
+        "type": "image",
+        "src": "assets/projects/mytrckr02.png"
+      },
+      {
+        "type": "image",
+        "src": "assets/projects/mytrckr03.png"
+      },
+      {
+        "type": "image",
+        "src": "assets/projects/mytrckr04.png"
+      },
+      {
+        "type": "image",
+        "src": "assets/projects/mytrckr05.png"
+      }
+    ],
+    "category": "Web"
   }
 ]
